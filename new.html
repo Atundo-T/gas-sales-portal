@@ -1,0 +1,148 @@
+# Fixed Firebase Version — Upload This to GitHub
+
+Replace ONLY the Firebase section of your code with this corrected version.
+
+---
+
+## 1. REMOVE THESE LINES
+
+Delete these lines completely:
+
+```html
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js"></script>
+```
+
+AND DELETE:
+
+```javascript
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+```
+
+---
+
+## 2. PASTE THIS VERSION INSTEAD
+
+Paste this entire section:
+
+```html
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+
+<script>
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCyvdFCewvjweOVpVgN3rLJaysLKHDGAes",
+  authDomain: "ultimate-flame-gas-centr-65cc3.firebaseapp.com",
+  databaseURL: "https://ultimate-flame-gas-centr-65cc3-default-rtdb.firebaseio.com",
+  projectId: "ultimate-flame-gas-centr-65cc3",
+  storageBucket: "ultimate-flame-gas-centr-65cc3.firebasestorage.app",
+  messagingSenderId: "1027793228898",
+  appId: "1:1027793228898:web:381b830537c93703e96d3b",
+  measurementId: "G-BLMZYRWQVJ"
+};
+
+let db;
+
+try {
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  db = firebase.database();
+  console.log("Firebase connected successfully");
+} catch (err) {
+  console.error("Firebase error:", err);
+}
+
+</script>
+```
+
+---
+
+# 3. IMPORTANT — REMOVE THIS BLOCK
+
+Delete this entire block from your code:
+
+```javascript
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+```
+
+---
+
+# 4. SAVE THE FILE
+
+Press:
+
+```text
+Ctrl + S
+```
+
+---
+
+# 5. UPLOAD TO GITHUB
+
+Open terminal inside project folder:
+
+```bash
+git add .
+git commit -m "Fixed Firebase SDK"
+git push
+```
+
+---
+
+# 6. ENABLE FIREBASE DATABASE
+
+Go to Firebase Console:
+
+[https://console.firebase.google.com](https://console.firebase.google.com)
+
+Then:
+
+Build → Realtime Database → Create Database
+
+Choose:
+
+```text
+Start in test mode
+```
+
+---
+
+# 7. ENABLE AUTHENTICATION
+
+Firebase → Build → Authentication → Get Started
+
+Enable:
+
+```text
+Email/Password
+```
+
+---
+
+# 8. ADD AUTHORIZED DOMAIN
+
+Firebase → Authentication → Settings → Authorized Domains
+
+Add:
+
+```text
+atundo-t.github.io
+```
+
+---
+
+# 9. REFRESH WEBSITE
+
+After GitHub finishes deploying:
+
+```text
+Ctrl + F5
+```
+
+The Firebase error should disappear and the portal should connect properly.
