@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ultimate Business Enterprises</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Segoe UI',system-ui,sans-serif;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#667eea 0%,#764ba2 25%,#f093fb 50%,#4facfe 75%,#00f2fe 100%);
+  background-size:400% 400%;
+  animation:gradientBG 15s ease infinite;
+  padding:20px;
+}
+
+@keyframes gradientBG {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+.container{
+  text-align:center;
+  background:rgba(255,255,255,0.95);
+  border-radius:20px;
+  padding:60px 40px;
+  max-width:600px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.3);
+  backdrop-filter:blur(10px);
+  border:2px solid rgba(255,255,255,0.2);
+  animation:slideUp 0.8s ease;
+}
+
+@keyframes slideUp {
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.logo{
+  font-size:80px;
+  margin-bottom:20px;
+  animation:bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+}
+
+h1{
+  font-size:32px;
+  background:linear-gradient(135deg,#667eea,#764ba2,#f093fb);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  font-weight:800;
+  margin-bottom:20px;
+  letter-spacing:1px;
+}
+
+p{
+  font-size:16px;
+  color:#555;
+  margin-bottom:40px;
+  line-height:1.6;
+}
+
+.dropdown-section{
+  position:relative;
+  display:inline-block;
+}
+
+.dropdown-btn{
+  background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+  color:#fff;
+  padding:15px 40px;
+  font-size:16px;
+  font-weight:700;
+  border:none;
+  border-radius:50px;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  box-shadow:0 8px 25px rgba(102,126,234,0.4);
+  text-transform:uppercase;
+  letter-spacing:1px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.dropdown-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 35px rgba(102,126,234,0.6);
+}
+
+.dropdown-btn:active{
+  transform:translateY(-1px);
+}
+
+.dropdown-icon{
+  font-size:20px;
+  transition:transform 0.3s ease;
+}
+
+.dropdown-btn.active .dropdown-icon{
+  transform:rotate(180deg);
+}
+
+.dropdown-menu{
+  position:absolute;
+  top:calc(100% + 15px);
+  left:50%;
+  transform:translateX(-50%);
+  background:#ffffff;
+  border-radius:15px;
+  box-shadow:0 15px 50px rgba(0,0,0,0.2);
+  overflow:hidden;
+  min-width:300px;
+  opacity:0;
+  visibility:hidden;
+  transform:translateX(-50%) translateY(-10px);
+  transition:all 0.3s ease;
+  z-index:1000;
+}
+
+.dropdown-menu.active{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(-50%) translateY(0);
+}
+
+.menu-item{
+  display:block;
+  padding:18px 25px;
+  text-decoration:none;
+  color:#333;
+  font-size:15px;
+  font-weight:600;
+  border-bottom:1px solid #e43222;
+  transition:all 0.3s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.menu-item:last-child{
+  border-bottom:none;
+}
+
+.menu-item::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:0;
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#667eea,#764ba2);
+  transition:width 0.3s ease;
+  z-index:-1;
+}
+
+.menu-item:nth-child(1)::before{
+  background:linear-gradient(90deg,#f093fb,#f5576c);
+}
+
+.menu-item:nth-child(2)::before{
+  background:linear-gradient(90deg,#4facfe,#00f2fe);
+}
+
+.menu-item:hover{
+  color:#ebba18;
+  padding-left:35px;
+}
+
+.menu-icon{
+  font-size:20px;
+  margin-right:10px;
+}
+
+.footer{
+  margin-top:40px;
+  padding-top:30px;
+  border-top:2px solid #eee;
+  font-size:13px;
+  color:#999;
+}
+
+.footer-text{
+  animation:fadeIn 1s ease 0.5s both;
+}
+
+@keyframes fadeIn {
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+.stars{
+  position:fixed;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:-1;
+}
+
+.star{
+  position:absolute;
+  background:#fff;
+  border-radius:50%;
+  animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+  0%,100%{opacity:0.3;}
+  50%{opacity:1;}
+}
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="container">
+  <div class="logo">🚀</div>
+  
+  <h1>Thank You For Visiting</h1>
+  <h1 style="font-size:28px;margin-top:-10px;margin-bottom:30px;">ULTIMATE BUSINESS ENTERPRISES</h1>
+  
+  <p>Please proceed to login sections below and select your business portal to continue.</p>
+
+  <div class="dropdown-section">
+    <button class="dropdown-btn" onclick="toggleDropdown()">
+      <span>📱 Select Portal</span>
+      <span class="dropdown-icon">▼</span>
+    </button>
+    
+    <div class="dropdown-menu" id="dropdown-menu">
+      <a href="gassalesportal.html" class="menu-item">
+        <span class="menu-icon">🔥</span>
+        <span>ULTIMATE FLAME GAS CENTRE</span>
+      </a>
+      <a href="cybercafepos.html" class="menu-item">
+        <span class="menu-icon">💻</span>
+        <span>CYBER CAFE POS SYSTEM</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p class="footer-text">© 2024 Ultimate Business Enterprises. All rights reserved.</p>
+    <p class="footer-text">Secure Business Management Solutions</p>
+  </div>
+</div>
+
+<script>
+function toggleDropdown() {
+  const menu = document.getElementById('dropdown-menu');
+  const btn = document.querySelector('.dropdown-btn');
+  menu.classList.toggle('active');
+  btn.classList.toggle('active');
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+  const dropdown = document.querySelector('.dropdown-section');
+  if(!dropdown.contains(e.target)) {
+    document.getElementById('dropdown-menu').classList.remove('active');
+    document.querySelector('.dropdown-btn').classList.remove('active');
+  }
+});
+
+// Create animated stars
+function createStars() {
+  const starsContainer = document.getElementById('stars');
+  for(let i = 0; i < 20; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.width = Math.random() * 3 + 'px';
+    star.style.height = star.style.width;
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.animationDelay = Math.random() * 3 + 's';
+    starsContainer.appendChild(star);
+  }
+}
+
+createStars();
+</script>
+</body>
+</html>
